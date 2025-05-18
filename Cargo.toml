@@ -1,0 +1,15 @@
+[package]
+name = "cargo-pystubgen"
+version = "0.1.0"
+edition = "2021"
+
+
+[[bin]]
+name = "cargo-pystubgen"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+syn = { version = "2.0.100", features = ["full"] }
+quote = "1.0"
+tempfile = "3.19.1"
