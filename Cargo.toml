@@ -2,6 +2,11 @@
 name = "cargo-pystubgen"
 version = "0.1.0"
 edition = "2021"
+description = "Cargo subcommand for xxxx"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/GamingChikuwabu/cargo-pystubgen.git"
+homepage = "https://github.com/GamingChikuwabu/cargo-pystubgen"
+documentation = "https://docs.rs/cargo-pystubgen"
 readme = "README.md"
 
 [[bin]]
