@@ -19,4 +19,4 @@ Python IDE での補完や型ヒントを向上させ、静的解析や開発効
 ## 使用方法
 
 ```bash
-cargo run --example demo > output.pyi
+cargo pystubgen
