@@ -1,2 +1,5 @@
 target/*
-tests/*
+tests/test-project/.venv
+tests/test-project/single_project/target/*
+tests/test-project/libs/lib_c/target/*
+*.pyd

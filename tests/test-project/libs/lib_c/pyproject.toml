@@ -1,0 +1,22 @@
+[project]
+name = "lib-c"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "KatsuhitoSudare", email = "k.56482525@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+lib-c = "lib_c:main"
+
+[tool.maturin]
+module-name = "lib_c._core"
+python-packages = ["lib_c"]
+python-source = "src"
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"

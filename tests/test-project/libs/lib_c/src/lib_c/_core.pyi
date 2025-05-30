@@ -1,0 +1,6 @@
+def hello_from_bin() -> str:
+    ...
+
+def hello_from_bin_2(a: int, b: int) -> str:
+    ...
+

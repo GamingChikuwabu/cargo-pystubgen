@@ -1,5 +1,6 @@
 use quote::ToTokens;
 use syn::Meta;
+use std::path::PathBuf;
 
 #[derive(Debug,Default,PartialEq, Eq)]
 pub struct RustFunctionData{
@@ -8,6 +9,26 @@ pub struct RustFunctionData{
     pub return_type: String,
     pub attributes: Vec<String>,
     pub doc: String,
+}
+
+pub struct RustSrcData{
+    pub functions: Vec<RustFunctionData>,
+}
+
+pub fn parse_rust_src_file(rust_src_file: &PathBuf) -> RustSrcData{
+    let file_content = std::fs::read_to_string(rust_src_file).unwrap();
+    let syn_file = syn::parse_str::<syn::File>(&file_content).unwrap();
+    let functions = syn_file.items.iter().filter_map(|item|{
+        if let syn::Item::Fn(item_fn) = item{
+            Some(parse_function_data(item_fn))
+        }
+        else{
+            None
+        }
+    }).collect();
+    RustSrcData{
+        functions: functions,
+    }
 }
 
 pub fn parse_function_data(item: &syn::ItemFn) -> RustFunctionData{

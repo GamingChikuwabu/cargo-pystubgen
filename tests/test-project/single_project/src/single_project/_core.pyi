@@ -1,0 +1,16 @@
+def hello_from_bin() -> str:
+    ...
+
+def test_lib_code_fn() -> str:
+    ...
+
+#  2つの整数を受け取り、その和を返す関数
+def test_lib_code_fn_2(a: int, b: int) -> str:
+    ...
+
+def test_lib_code_b_fn() -> str:
+    ...
+
+def test_lib_code_b_fn_2() -> str:
+    ...
+

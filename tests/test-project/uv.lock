@@ -1,0 +1,37 @@
+version = 1
+revision = 1
+requires-python = ">=3.12"
+
+[manifest]
+members = [
+    "lib-a",
+    "lib-b",
+    "lib-c",
+    "single-project",
+    "test-project",
+]
+
+[[package]]
+name = "lib-a"
+version = "0.1.0"
+source = { editable = "libs/lib_a" }
+
+[[package]]
+name = "lib-b"
+version = "0.1.0"
+source = { editable = "libs/lib_b" }
+
+[[package]]
+name = "lib-c"
+version = "0.1.0"
+source = { editable = "libs/lib_c" }
+
+[[package]]
+name = "single-project"
+version = "0.1.0"
+source = { editable = "single_project" }
+
+[[package]]
+name = "test-project"
+version = "0.1.0"
+source = { virtual = "." }
