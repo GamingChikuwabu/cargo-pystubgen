@@ -1,22 +1,19 @@
-# Pystubgen
+# cargo-pystubgen
 
-**Pystubgen** は、Rustで記述されたPythonバインディング（PyO3など）から `.pyi` スタブファイルを自動生成するツールです。  
-Python IDE での補完や型ヒントを向上させ、静的解析や開発効率の向上に貢献します。
+`cargo-pystubgen` は、Rust で書かれた Python 拡張モジュールに対して、既存の `#[pufunction]` などのアトリビュートを**書き換えることなく非破壊で** `.pyi` スタブファイルを生成する Cargo サブコマンドです。
 
-## 特徴
+## ✨ 特徴
 
-- Rustの関数シグネチャから `.pyi` スタブファイルを自動生成
-- 型情報を保持した出力により、Python開発者の補完サポートを強化
-- PyO3との連携を前提とした構造解析
+- 既存コードを変更せず `.pyi` ファイルを生成
+- `#[pufunction]` などのアトリビュートを解析
+- 関数定義と一部の型情報に対応
+- [uv](https://github.com/astral-sh/uv) のワークスペースおよび単体プロジェクトに対応
 
-## 現在の機能
+## 📦 インストール
 
-- ✅ 関数 (`#[pyfunction]`) の解析と `.pyi` スタブ出力
-- ✅ 型推論に基づく引数・戻り値の出力対応（簡易的）
-
----
+```bash
+cargo install cargo-pystubgen
 
 ## 使用方法
-
 ```bash
 cargo pystubgen
