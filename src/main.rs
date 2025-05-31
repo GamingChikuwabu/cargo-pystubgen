@@ -14,7 +14,6 @@ fn main() {
             if let Some(dir) = output_dir.clone() {
                 println!("Output directory: {}", dir.display());
             }
-            println!("Debug mode: {}", debug);
             stubgen::generate_stubs(debug);
         }
     }

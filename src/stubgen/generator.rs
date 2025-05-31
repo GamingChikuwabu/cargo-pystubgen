@@ -34,7 +34,6 @@ pub fn generate_stub(
         .map_err(|e| format!("File create failed: {}", e))?;
 
     println!("Generating stub file: {}", output_path.display());
-    println!("Number of functions: {}", python_src_data.functions.len());
 
     for function_data in &python_src_data.functions {
         if function_data.name == module_name {
@@ -62,7 +61,6 @@ fn generate_function_stub(
     file: &mut File,
     function_data: &PythonFunctionData,
 ) -> Result<(), Box<dyn Error>> {
-    println!("Generating stub for function: {}", function_data.name);
 
     if !function_data.doc.is_empty() {
         writeln!(file, "# {}", function_data.doc)?;

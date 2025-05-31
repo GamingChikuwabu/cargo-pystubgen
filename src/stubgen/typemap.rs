@@ -60,10 +60,17 @@ pub fn map_type(ty: &Type) -> String {
             }
         }
 
+        
+
+        Type::Tuple(t) => {
+            let elements = t.elems.iter().map(|e| map_type(e)).collect::<Vec<String>>();
+            format!("tuple[{}]", elements.join(", "))
+        }
+
         // 参照型（&T）
         Type::Reference(r) => map_type(&r.elem),
 
-        // タプル型など未対応の型は Any 扱い
+        // 未対応の型は Any 扱い
         _ => "Any".to_string(),
     }
 }

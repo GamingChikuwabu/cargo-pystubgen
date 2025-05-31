@@ -55,7 +55,7 @@ pub fn parse_function_args(item: &syn::ItemFn) -> Vec<(String, String)>{
 
 pub fn parse_function_return_type(item: &syn::ItemFn) -> String{
     match &item.sig.output {
-        syn::ReturnType::Default => "()".to_string(),
+        syn::ReturnType::Default => "None".to_string(),
         syn::ReturnType::Type(_, ty) => ty.to_token_stream().to_string(),
     }
 }
